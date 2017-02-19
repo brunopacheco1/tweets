@@ -13,9 +13,6 @@ import com.engsoft29.bab.tweets.dto.HashtagDTO;
 import com.engsoft29.bab.tweets.exception.AppException;
 
 import twitter4j.FilterQuery;
-import twitter4j.StallWarning;
-import twitter4j.Status;
-import twitter4j.StatusDeletionNotice;
 import twitter4j.StatusListener;
 import twitter4j.TwitterStream;
 import twitter4j.TwitterStreamFactory;
@@ -29,29 +26,7 @@ public class HashtagService {
 	
 	@PostConstruct
 	private void init() {
-		StatusListener listener = new StatusListener() {
-			
-			@Override
-			public void onStallWarning(StallWarning arg0) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-			@Override
-			public void onScrubGeo(long arg0, long arg1) {
-				// TODO Auto-generated method stub
-				
-			}
-			
-            public void onStatus(Status status) {
-                System.out.println(status.getUser().getName() + " : " + status.getText());
-            }
-            public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {}
-            public void onTrackLimitationNotice(int numberOfLimitedStatuses) {}
-            public void onException(Exception ex) {
-                ex.printStackTrace();
-            }
-        };
+		StatusListener listener = new TweetConsumer();
         
         twitterStream = new TwitterStreamFactory().getInstance();
         
