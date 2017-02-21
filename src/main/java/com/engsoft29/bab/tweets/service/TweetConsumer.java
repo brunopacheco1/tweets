@@ -1,5 +1,7 @@
 package com.engsoft29.bab.tweets.service;
 
+import java.io.IOException;
+
 import twitter4j.StallWarning;
 import twitter4j.Status;
 import twitter4j.StatusDeletionNotice;
@@ -22,7 +24,11 @@ public class TweetConsumer implements StatusListener {
 	}
 
 	public void onStatus(Status status) {
-		 service.processar(status.getUser().getName() + " : " + status.getText());
+		 try {
+			service.add(status.getUser().getName() + " : " + status.getText());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	public void onDeletionNotice(StatusDeletionNotice statusDeletionNotice) {
