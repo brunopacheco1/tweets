@@ -1,4 +1,4 @@
-package com.engsoft29.bab.tweets.service;
+package com.dev.bruno.sentimentanalysis.tweets.service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;

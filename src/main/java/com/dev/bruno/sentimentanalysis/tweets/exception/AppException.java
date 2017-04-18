@@ -1,4 +1,4 @@
-package com.engsoft29.bab.tweets.exception;
+package com.dev.bruno.sentimentanalysis.tweets.exception;
 
 public class AppException extends Exception {
     

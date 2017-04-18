@@ -1,4 +1,4 @@
-package com.engsoft29.bab.tweets.filter;
+package com.dev.bruno.sentimentanalysis.tweets.filter;
 
 import java.io.IOException;
 

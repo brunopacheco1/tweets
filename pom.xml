@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.engsoft29.bab</groupId>
+	<groupId>com.dev.bruno.sentimentanalysis</groupId>
 	<artifactId>tweets</artifactId>
 	<version>1.0</version>
 
@@ -58,8 +58,8 @@
 				<configuration>
 					<hostname>localhost</hostname>
 					<port>9990</port>
-					<username>bab</username>
-					<password>bab</password>
+					<username>tweets</username>
+					<password>tweets</password>
 				</configuration>
 			</plugin>
 
@@ -72,16 +72,21 @@
 	</build>
 	<dependencies>
 		<dependency>
+			<groupId>org.elasticsearch.client</groupId>
+			<artifactId>transport</artifactId>
+			<version>5.2.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.7</version>
+		</dependency>
+		<dependency>
 			<groupId>javax</groupId>
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>commons-beanutils</groupId>
-			<artifactId>commons-beanutils</artifactId>
-			<version>1.9.2</version>
 		</dependency>
 
 		<dependency>
@@ -91,16 +96,21 @@
 		</dependency>
 
 		<dependency>
-			<groupId>io.swagger</groupId>
-			<artifactId>swagger-jaxrs</artifactId>
-			<version>1.5.10</version>
+			<groupId>edu.uci.ics</groupId>
+			<artifactId>crawler4j</artifactId>
+			<version>4.2</version>
 		</dependency>
 
 		<dependency>
-			<groupId>com.fasterxml.jackson.core</groupId>
-			<artifactId>jackson-databind</artifactId>
-			<version>2.5.1</version>
-			<scope>provided</scope>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>amazon-kinesis-client</artifactId>
+			<version>1.7.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.amazonaws</groupId>
+			<artifactId>amazon-kinesis-producer</artifactId>
+			<version>0.12.3</version>
 		</dependency>
 
 		<dependency>

@@ -1,15 +1,9 @@
-package com.engsoft29.bab.tweets.dto;
+package com.dev.bruno.sentimentanalysis.tweets.dto;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
-
-@ApiModel
 public class ResponseDTO {
 
-	@ApiModelProperty(value="Se a requisição foi processada com sucesso ou não.", example="false")
 	private Boolean success = false;
 	
-	@ApiModelProperty(value="Mensagem de resposta, caso seja uma excepção", example="Campo não preenchido corretamente.")
 	private String message;
 
 	public ResponseDTO(Boolean success, String message) {

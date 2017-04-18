@@ -1,4 +1,4 @@
-package com.engsoft29.bab.tweets.service;
+package com.dev.bruno.sentimentanalysis.tweets.service;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -9,8 +9,8 @@ import javax.ejb.Singleton;
 
 import org.apache.commons.lang3.StringUtils;
 
-import com.engsoft29.bab.tweets.dto.HashtagDTO;
-import com.engsoft29.bab.tweets.exception.AppException;
+import com.dev.bruno.sentimentanalysis.tweets.dto.HashtagDTO;
+import com.dev.bruno.sentimentanalysis.tweets.exception.AppException;
 
 import twitter4j.FilterQuery;
 import twitter4j.StatusListener;
@@ -38,7 +38,7 @@ public class HashtagService {
 		twitterStream.shutdown();
 	}
 
-    public void processar(HashtagDTO dto) throws AppException {
+    public void process(HashtagDTO dto) throws AppException {
     	validar(dto);
     	
     	hashtagsToTrack.add(dto.getHashtag());

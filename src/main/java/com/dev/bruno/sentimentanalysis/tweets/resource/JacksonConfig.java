@@ -1,4 +1,4 @@
-package com.engsoft29.bab.tweets.resource;
+package com.dev.bruno.sentimentanalysis.tweets.resource;
 
 import java.text.SimpleDateFormat;
 
